@@ -16,8 +16,10 @@
 <script src="./js/sweetalert.min.js"></script>
 <script src="./js/jquery.dataTables.min.js"></script>
 <script src="./js/main.js"></script>
+<script src="./js/mercadopago.js"></script>
 <script>
 	$(document).ready(function(){
 		$.material.init();
 	});
+      window.Mercadopago.setPublishableKey("APP_USR-1c9a4ea2-a4d9-4b87-94ef-644506872532");
 </script>

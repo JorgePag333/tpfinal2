@@ -1,20 +1,13 @@
-<?php
-
-// SDK de Mercado Pago
-require_once '../tpfinal/Mercadopago/vendor/autoload.php';
-// Agrega credenciales
-MercadoPago\SDK::setAccessToken('TEST-6056389123923028-070523-2a4fd9782f870142ea6db9b35c75c8af-5428116');
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Pedido</title>
     <?php include './inc/link.php'; ?>
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body id="container-page-index">
-    <?php include './inc/navbar.php'; ?>
+    <?php include './inc/navbar.php';
+    require_once "certificadoMp.php";
+    ?>
    
     <section id="container-pedido">
         <div class="container">
@@ -38,7 +31,6 @@ MercadoPago\SDK::setAccessToken('TEST-6056389123923028-070523-2a4fd9782f870142ea
                         <div class="row">
                           <div class="col-xs-10 col-xs-offset-1">
                             <div>
-                            <?php include 'Mp.php'?>
                             </div>
                             <p class="text-center lead">Selecciona un metodo de pago</p>
                             <img class="img-responsive center-all-contens" src="assets/img/mplogo.png">
@@ -224,24 +216,8 @@ MercadoPago\SDK::setAccessToken('TEST-6056389123923028-070523-2a4fd9782f870142ea
     <div class="ResForm"></div>
     <?php 
     include './inc/footer.php'; ?>
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script>
-// Agrega credenciales de SDK
-const mp = new MercadoPago('TEST-bed77968-309e-42e0-9719-7dbc8e6956b2', {
-        locale: 'es-AR'
-  });
-
-  // Inicializa el checkout
-  mp.checkout({
-      preference: {
-          id: '6056389123923028'
-      },
-      render: {
-            container: 'pedido.php', // Indica dónde se mostrará el botón de pago
-            label: 'Pagar', // Cambia el texto del botón de pago (opcional)
-      }
-});
-
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js">
+window.Mercadopago.setPublishableKey("APP_USR-1c9a4ea2-a4d9-4b87-94ef-644506872532");
 </script>
 </body>
 </html>
